@@ -1,7 +1,21 @@
 package com.sweet.RNBE.entities;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class Admin {
 
+    @Id
+    @SequenceGenerator(
+            name = "admin_sequence",
+            sequenceName = "admin_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "admin_sequence"
+    )
     private Integer id;
     private String username;
     private String password;

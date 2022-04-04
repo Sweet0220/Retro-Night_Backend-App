@@ -1,0 +1,21 @@
+@font-face {
+    font-family: Pixel;
+    src: url('../fonts/DisposableDroidBB.ttf');
+}
+
+body {
+    background-color: #000000;
+}
+
+.login_container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:  5%;
+    width: 100%;
+}
+
+.login_title {
+    font-family: Pixel, serif;
+    color: #9200db;
+    text-align: center;
+}
