@@ -8,6 +8,7 @@ body {
 }
 
 .login_container {
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
     margin-top:  5%;
@@ -18,4 +19,30 @@ body {
     font-family: Pixel, serif;
     color: #9200db;
     text-align: center;
+    font-size: 3vw;
+}
+
+.input_label {
+    margin-top: 4vw;
+    margin-bottom: 1vw;
+    text-align: center;
+    margin-right: 10%;
+    font-family: Pixel, serif;
+    color:#9200db;
+    font-size: 2vw;
+}
+
+.input {
+    align-self: center;
+    font-family: Pixel, serif;
+    font-size: 2vw;
+    border-width: 0.2vw;
+    border-color: #9200db;
+    padding: 0.5vw;
+    color: #9200db;
+    outline: none;
+    border-radius: 0.5vw;
+    background-color: black;
+    width: 20%;
+    size: 5vw;
 }
