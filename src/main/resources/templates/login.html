@@ -14,19 +14,13 @@
     <div class="login_container" id="container">
         <h1 class="login_title" id="title">log_in</h1>
         <form class="login_form" id="login_form">
-            <h3 class="input_label">username</h3>
-            <input type="text" class="input" id="username" placeholder="enter_username..">
+            <h3 class="input_label" >username</h3>
+            <input type="text" class="input" id="username_input" placeholder="enter_username..">
             <h3 class="input_label">password</h3>
-            <input type="password" class="input" id="password" placeholder="enter_password..">
-            <a href="" id="forgot_username">
-                <p class="other_link">forgot_username</p>
-            </a>
-            <a href="" id="forgot_password" style="margin-top: 0">
-                <p class="other_link">forgot_password</p>
-            </a>
-            <a href="" id="submit" >
-                <p class="other_link" style="font-size: 2vw; text-align: center; margin-top: 5vw">submit_</p>
-            </a>
+            <input type="password" class="input" id="password_input" placeholder="enter_password..">
+            <p class="other_link" id="forgot_username">forgot_username</p>
+            <p class="other_link" id="forgot_password">forgot_password</p>
+            <p class="other_link" style="font-size: 2vw; text-align: center; margin-top: 5vw" id="submit">submit_</p>
         </form>
     </div>
     <div style="display: flex; justify-content: space-between; margin-top: 3vw">
@@ -34,4 +28,5 @@
         <h3 class="corner_text_top">v0.1_alpha</h3>
     </div>
 </body>
+<script type="text/javascript" th:src="@{/js/login.js}" src="../static/js/login.js"></script>
 </html>

@@ -77,6 +77,8 @@ body {
     font-size: 1.5vw;
     color: #9200db;
     text-align: right;
+    text-decoration: underline #330d48;
+    cursor: pointer;
 }
 
 .submit_button {
@@ -88,14 +90,32 @@ a {
     word-wrap: normal;
 }
 
-p:link {
-    text-decoration: underline;
-    text-underline-color: #9200db;
+p {
+    user-select: none;
 }
 
-p:hover {
-    text-decoration: underline;
-    text-underline-color: #c426ff;
+p.other_link:hover {
+    height:0.5vw;
+    margin-top: 1vw;
+    margin-right: 0;
+    font-family: Pixel, serif;
+    font-size: 1.5vw;
+    color: #9200db;
+    text-align: right;
+    text-decoration: underline #9200db;
+    cursor: pointer;
+}
+
+p.other_link:active {
+    height:0.5vw;
+    margin-top: 1vw;
+    margin-right: 0;
+    font-family: Pixel, serif;
+    font-size: 1.5vw;
+    color: #9200db;
+    text-align: right;
+    text-decoration: underline #be78e7;
+    cursor: pointer;
 }
 
 h3 {
