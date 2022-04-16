@@ -2,7 +2,9 @@ package com.sweet.RNBE.security;
 
 import com.sweet.RNBE.jwt.JwtUsernameAndPasswordAuthenticationFilter;
 import org.springframework.boot.autoconfigure.security.reactive.PathRequest;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -22,5 +24,11 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/js/**", "/css/**", "/login", "/auth", "/").permitAll()
                 .anyRequest().authenticated();
+    }
+
+    @Override
+    @Bean
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
     }
 }
