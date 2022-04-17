@@ -1,11 +1,16 @@
 package com.sweet.RNBE.entities;
 
+import org.springframework.security.core.CredentialsContainer;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table
-public class Admin {
-
+public class Admin implements UserDetails {
     @Id
     @SequenceGenerator(
             name = "admin_sequence",
@@ -22,14 +27,20 @@ public class Admin {
     private String email;
     private String jwt;
 
+    public Admin() {
+
+    }
+
+    public Admin(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
     public Admin(String username, String password, String email, String jwt) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.jwt = jwt;
-    }
-
-    public Admin() {
     }
 
     public Integer getId() {
@@ -44,8 +55,33 @@ public class Admin {
         return username;
     }
 
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
     }
 
     public String getPassword() {
@@ -71,4 +107,5 @@ public class Admin {
     public void setJwt(String jwt) {
         this.jwt = jwt;
     }
+
 }

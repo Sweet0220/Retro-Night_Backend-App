@@ -17,8 +17,8 @@ document.addEventListener("keyup", function(event) {
     if ((isEmpty(username) || isEmpty(password)) && event.keyCode === 13) {
         alert("One of the fields is empty!");
     } else if(event.keyCode === 13){
-        let credentials = JSON.stringify(new Credentials(username.value, password.value));
-        console.log(credentials);
+        credentials = JSON.stringify(new Credentials(username.value, password.value));
+        authenticate(credentials);
     }
 });
 
@@ -27,11 +27,28 @@ function performSubmission() {
         alert("One of the fields is empty!");
     }
     else {
-        console.log("meye");
+        let credentials = JSON.stringify(new Credentials(username.value, password.value));
+        authenticate(credentials);
     }
 }
 
 function isEmpty(form) {
     return form.value === "";
+}
+
+function authenticate(credentials) {
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://localhost:8080/auth", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            let response = JSON.parse(xhr.responseText);
+            console.log("jwt: " + response.jwt);
+        }
+        else if (xhr.status !== 200){
+            alert("Incorrect credentials!");
+        }
+    };
+    xhr.send(credentials);
 }
 

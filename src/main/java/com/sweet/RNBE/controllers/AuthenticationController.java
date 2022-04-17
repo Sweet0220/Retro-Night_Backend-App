@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/")
 public class AuthenticationController {
 
     private final AuthenticationManager authenticationManager;
@@ -20,10 +21,9 @@ public class AuthenticationController {
     public AuthenticationController(AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;
     }
-    
-    //public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest)
+
     @PostMapping("/auth")
-    public ResponseEntity<?> WORKS(@RequestBody AuthenticationRequest authenticationRequest) throws Exception{
+    public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception{
         try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(), authenticationRequest.getPassword())
