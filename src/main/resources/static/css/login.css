@@ -5,6 +5,8 @@
 
 body {
     background-color: #000000;
+    overflow: hidden;
+    max-height: 100%;
 }
 
 .login_container {
@@ -13,6 +15,7 @@ body {
     margin-right: auto;
     margin-top: 2vw;
     width: 100%;
+    position: relative;
 }
 
 .login_title {
@@ -84,6 +87,13 @@ body {
 .submit_button {
     background: none;
     border: none;
+}
+
+.warning {
+    font-family: Pixel, serif;
+    font-size: 1.5vw;
+    color: #9200db;
+    text-align: center;
 }
 
 a {

@@ -10,6 +10,6 @@ import org.springframework.stereotype.Service;
 public class AdminDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return new Admin("admin","admin");
+        return new Admin("admin123" ,"admin");
     }
 }

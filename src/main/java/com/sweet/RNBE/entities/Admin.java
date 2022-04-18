@@ -32,8 +32,11 @@ public class Admin implements UserDetails {
     }
 
     public Admin(String username, String password) {
+        this.id = 1;
         this.username = username;
         this.password = password;
+        this.email = "default";
+        this.jwt = "default";
     }
 
     public Admin(String username, String password, String email, String jwt) {
@@ -49,10 +52,6 @@ public class Admin implements UserDetails {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
     }
 
     @Override
@@ -84,8 +83,14 @@ public class Admin implements UserDetails {
         return null;
     }
 
+    @Override
+    public String getUsername() {
+        return this.username;
+    }
+
+    @Override
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public void setPassword(String password) {
